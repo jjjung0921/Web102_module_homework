@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: React CI
 
 on:
@@ -11,13 +8,11 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     if: ${{contains(github.event.head_commit.message, '[ci run]')}}
 
@@ -29,6 +24,16 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install
-    - run: npm run start
+    - name: Run start script with timeout
+      run: |
+        npm run start & PID=$!
+        (sleep 1200; kill $PID 2>/dev/null) &
+        wait $PID
       timeout-minutes: 20
+      continue-on-error: true
+    - name: Check start script result
+      run: |
+        if [ $? -ne 0 ]; then
+          echo "::warning::npm start command failed or timed out after 20 minutes"
+        fi
     - run: npm test

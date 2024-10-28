@@ -12,8 +12,8 @@ const Phrases = [
 ];
 
 function topnav(phrase, index) {
-  if (phrase == "logo") return <img src={image("logo")} id="logo" key={index} alt="logo"/>;
-  else if (phrase == "About")
+  if (phrase === "logo") return <img src={image("logo")} id="logo" key={index} alt="logo"/>;
+  else if (phrase === "About")
     return (
       <Link to="/about" className="phrases" key={index}>
         {phrase}

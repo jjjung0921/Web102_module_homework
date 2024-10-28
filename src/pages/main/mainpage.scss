@@ -1,0 +1,22 @@
+#header{
+    display: flex;
+    height: 120px;
+    margin-top: 33px;
+    gap: 80px;
+    justify-content: center;
+    
+    .phrases{
+        display: flex;
+        height: 53px;
+        margin-top: auto;        
+    }
+    
+    .phrases:hover{
+        color: red;
+        text-decoration: underline;
+    }
+}
+
+#main_picture{
+    height: 464px;
+}

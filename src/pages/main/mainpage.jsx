@@ -1,17 +1,12 @@
-import logo from "../../assets/logo.png";
+import { Header } from "../../components/main/header";
+import { Main_image } from "../../components/main/main_picture";
+import "./mainpage.scss";
 
-Phrase = ["How it works", "Gifts", "About", "logo", "Login", "Members", "Contracts"];
-
-const element = (phrase) => {
-  
-    return(
-        <span>
-            {phrase}
-        </span>
-    );
+export const Mainpage = () => {
+  return (
+    <>
+      <Header />
+      <Main_image />
+    </>
+  );
 };
-
-export const Header = 
-<div id="Header">
-
-</div>;

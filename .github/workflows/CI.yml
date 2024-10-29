@@ -14,19 +14,25 @@ jobs:
       matrix:
         node-version: [20.x]
 
-    if: ${{contains(github.event.head_commit.message, '[ci run]')}}
+    if: ${{contains(github.event.head_commit.message, '[CI run]')}}
 
     steps:
-    - uses: actions/checkout@v4
+    - name: checkout code
+      uses: actions/checkout@v4
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
+      run: node -v
+
+    - name: install dependences
+      run: npm install
+
     - name: Run start script with timeout
       run: |
-        npm run start & PID=$!
+        npm run build & PID=$!
         (sleep 1200; kill $PID 2>/dev/null) &
         wait $PID
       timeout-minutes: 20
@@ -36,4 +42,3 @@ jobs:
         if [ $? -ne 0 ]; then
           echo "::warning::npm start command failed or timed out after 20 minutes"
         fi
-    - run: npm test

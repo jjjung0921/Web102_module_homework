@@ -39,6 +39,7 @@ jobs:
         wait $PID
       timeout-minutes: 20
       continue-on-error: true
+      
     - name: Check start script result
       run: |
         if [ $? -ne 0 ]; then

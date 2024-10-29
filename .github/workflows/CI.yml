@@ -25,6 +25,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+     
+    - name: check node version 
       run: node -v
 
     - name: install dependences

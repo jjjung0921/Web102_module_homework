@@ -12,4 +12,6 @@ code {
     monospace;
 }
 
-img{}
+img{
+  object-fit: contain;
+}

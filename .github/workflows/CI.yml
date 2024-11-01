@@ -32,14 +32,14 @@ jobs:
     - name: install dependences
       run: npm install
 
-    - name: Run start script with timeout
+    - name: Build start script with timeout
       run: |
         npm run build & PID=$!
         (sleep 1200; kill $PID 2>/dev/null) &
         wait $PID
       timeout-minutes: 20
       continue-on-error: true
-      
+
     - name: Check start script result
       run: |
         if [ $? -ne 0 ]; then

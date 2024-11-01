@@ -12,22 +12,30 @@ const Phrases = [
 ];
 
 function topnav(phrase, index) {
-  if (phrase === "logo") return <img src={image("logo")} id="logo" key={index} alt="logo"/>;
+  if (phrase === "logo")
+    return <img src={image("logo")} id="logo" key={index} alt="logo" />;
   else if (phrase === "About")
     return (
-      <Link to="/about" className="phrases" key={index}>
-        {phrase}
-      </Link>
+      <div className="item_box">
+        <Link to="/about" className="phrases" key={index}>
+          {phrase}
+        </Link>
+      </div>
     );
-  else return <div className="phrases" key={index}>{phrase}</div>;
+  else
+    return (
+      <div className="item_box">
+        <div className="phrases" key={index}>
+          {phrase}
+        </div>
+      </div>
+    );
 }
 
 export const Header = () => {
   return (
     <div id="header">
-      {Phrases.map((phrase, index) => (
-        topnav(phrase, index)
-      ))}
+      {Phrases.map((phrase, index) => topnav(phrase, index))}
     </div>
   );
 };

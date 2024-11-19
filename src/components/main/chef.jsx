@@ -5,13 +5,12 @@ export const Chef = () => {
     <div id="chef">
       <div class="content">
         <div class="discription">
-          <strong>Title</strong><br />
+          <strong>Title</strong>
+          <br />
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </div>
-        <div class="image">
-          <img src={image('chef')} />
-        </div>
+        <img src={image("chef")} />
       </div>
     </div>
   );

@@ -1,0 +1,76 @@
+#about {
+  width: 1000px;
+  margin: 30px auto 0;
+}
+
+#top {
+  width: 100%;
+  height: 500px;
+}
+
+.topLeft {
+  width: 750px;
+  height: 100%;
+  float: left;
+  background-image: url("./chef_about.png");
+}
+
+.itemBox {
+  width: 210px;
+  height: 210px;
+  padding: 20px;
+}
+
+.image {
+  width: 250px;
+  height: 250px;
+}
+
+#topItem {
+  background-color: rgba(56, 109, 13, 0.784);
+  margin-top: 250px;
+}
+
+.topRight {
+  width: 250px;
+  height: 100%;
+  float: right;
+}
+
+#middle {
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+#middle_left {
+  width: 750px;
+  float: left;
+}
+
+#middle_right {
+  width: 210px;
+  height: 460px;
+  padding: 20px;
+  float: left;
+  background-color: burlywood;
+}
+
+#Footer{
+    width: 1000px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: pink;
+}
+
+ul {
+  width: 730px;
+  height: 100%;
+  padding-left: 20px;
+  background-color: gray;
+  margin: 0;
+}
+
+li{
+    list-style: none;
+}

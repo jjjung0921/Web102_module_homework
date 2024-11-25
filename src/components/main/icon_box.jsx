@@ -1,20 +1,12 @@
-import Box from "main_module";
-import { image } from "../../image";
-
-const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-const boxes = [1, 2, 3, 4];
+import Box from 'main_module';
 
 export const IconBox = () => {
+    let boxes = [];
+    for(let i=1; i<5; i++) boxes.push(<Box index={i}/>);
 
-    return(
-        <div id="icon_box">
-            {boxes.map((i) => (
-                <Box 
-                    key={i} 
-                    image={image(`icon${i}`)} 
-                    text={text} 
-                />
-            ))}
-        </div>
-    );
+   return(
+    <div id='icon_box'>
+        {boxes}
+    </div>
+   );
 };

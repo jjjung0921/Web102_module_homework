@@ -13,7 +13,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.80.4",
     "web-vitals": "^2.1.4",
-    "web102_about_module": "^1.0.2"
+    "web102_about_module": "git+https://github.com/jjjung0921/web102_about_module.git"
   },
   "scripts": {
     "start": "react-scripts start",
